@@ -8,27 +8,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
-    <!-- 1. Muat React dan ReactDOM (Kamus Dasar) -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-
-    <!-- 2. Muat Babel Standalone (Si Penerjemah) -->
+    <!-- 1. Muat Babel Standalone untuk menerjemahkan JSX/TSX -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script type="importmap">
+
+    <!-- 2. Konfigurasi import map untuk memuat React sebagai ES Module -->
+    <script type="importmap">
 {
   "imports": {
-    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
     "react/": "https://aistudiocdn.com/react@^19.1.1/"
   }
 }
 </script>
+<link rel="stylesheet" href="/index.css">
 </head>
   <body class="bg-gray-100">
     <div id="root"></div>
 
-    <!-- 3. Berikan buku petunjuk (.tsx) ke penerjemah (Babel) -->
-    <!-- data-type="module" penting agar import/export berfungsi -->
+    <!-- 3. Jalankan skrip aplikasi Anda dengan tipe "text/babel" -->
     <script type="text/babel" data-type="module" src="./index.tsx"></script>
-  </body>
+  <script type="module" src="/index.tsx"></script>
+</body>
 </html>
