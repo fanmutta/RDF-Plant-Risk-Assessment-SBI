@@ -28,6 +28,7 @@
     <div id="root"></div>
 
     <!-- 3. Berikan buku petunjuk (.tsx) ke penerjemah (Babel) -->
-    <script type="text/babel" src="./index.tsx"></script>
+    <!-- data-type="module" penting agar import/export berfungsi -->
+    <script type="text/babel" data-type="module" src="./index.tsx"></script>
   </body>
 </html>
